@@ -3,7 +3,7 @@ async function generateAudio() {
     const prompt = document.getElementById('prompt').value;
     const audioPlayer = document.getElementById('audioPlayer');
 
-    const URL = `https://api.runpod.ai/v2/${ENDPOINT_ID}/runsync`;
+    const URL = 'https://runpod-proxy.ilikekeyboards4924.workers.dev/';
 
     const payload = {
         input: {
