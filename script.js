@@ -22,14 +22,15 @@ async function generateAudio() {
         });
 
         const result = await response.json();
-        
-        if (data.output && data.output.audio_base64) {
-            const audioSrc = `data:audio/wav;base64,${data.output.audio_base64}`;
+
+        console.log(result);
+        if (result.output && result.output.audio) {
+            const audioSrc = `data:audio/wav;base64,${result.output.audio}`;
             audioPlayer.src = audioSrc;
             audioPlayer.style.display = 'block';
             audioPlayer.play();
         } else {
-            console.error("Error response:", data);
+            console.error("Error response:", result);
             alert("Generation failed. Check the console for details.");
         }
     } catch (error) {
