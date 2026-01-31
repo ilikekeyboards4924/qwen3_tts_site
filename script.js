@@ -1,4 +1,15 @@
+function getUserId() {
+    let uid = localStorage.getItem('user_id');
+    if (!uid) {
+        uid = `user-${crypto.randomUUID()}`;
+        localStorage.setItem('user_id', uid);
+    }
+    return uid;
+}
+
 async function generateAudio() {
+    const userId = getUserId();
+
     const voice = document.getElementById('voice').value;
     const prompt = document.getElementById('prompt').value;
     const audioPlayer = document.getElementById('audioPlayer');
@@ -8,7 +19,8 @@ async function generateAudio() {
     const payload = {
         input: {
             voice: voice,
-            prompt: prompt
+            prompt: prompt,
+            user_id: userId
         }
     };
 
