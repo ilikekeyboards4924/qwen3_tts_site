@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Qwen3 TTS Generator</title>
-    <style src="index.css"></style>
+    <title>qwen3 tts</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Qwen3 TTS Generator</h1>
-    
-    <label for="character">Voice:</label><br>
+    <label for="character">voice:</label><br>
     <input type="text" id="voice" placeholder="e.g. brantley"><br><br>
 
-    <label for="prompt">Text Prompt:</label><br>
-    <textarea id="prompt" placeholder="Enter what they should say..."></textarea><br><br>
+    <label for="prompt">text prompt:</label><br>
+    <textarea id="prompt" placeholder="enter what they should say"></textarea><br><br>
 
     <button onclick="generateAudio()">Generate</button>
 
