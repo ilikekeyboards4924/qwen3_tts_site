@@ -40,7 +40,7 @@ async function generateAudio() {
             const audioSrc = `data:audio/wav;base64,${result.output.audio}`;
             audioPlayer.src = audioSrc;
             audioPlayer.style.display = 'block';
-            audioPlayer.play();
+            // audioPlayer.play();
         } else {
             console.error("Error response:", result);
             alert("Generation failed. Check the console for details.");
