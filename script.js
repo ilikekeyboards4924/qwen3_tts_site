@@ -18,8 +18,8 @@ async function generateAudio() {
 
     const payload = {
         input: {
-            voice: voice,
-            prompt: prompt,
+            voice: voice.toLowerCase(),
+            prompt: prompt.toLowerCase(),
             user_id: userId
         }
     };
