@@ -24,6 +24,8 @@ async function generateAudio() {
         }
     };
 
+    document.getElementById('generationStatus').innerText = "attempting generation...";
+
     try {
         const response = await fetch(URL, {
             method: 'POST',
@@ -34,8 +36,6 @@ async function generateAudio() {
         });
 
         const result = await response.json();
-
-        document.getElementById('generationStatus').innerText = "attempting generation...";
 
         console.log(result);
         if (result.output && result.output.audio) {
