@@ -35,6 +35,8 @@ async function generateAudio() {
 
         const result = await response.json();
 
+        document.getElementById('generationStatus').innerText = "attempting generation...";
+
         console.log(result);
         if (result.output && result.output.audio) {
             const audioSrc = `data:audio/wav;base64,${result.output.audio}`;
@@ -43,10 +45,10 @@ async function generateAudio() {
             // audioPlayer.play();
         } else {
             console.error("Error response:", result);
-            alert("Generation failed. Check the console for details.");
+            document.getElementById('generationStatus').innerText = "Generation failed. Check the console for details.";
         }
     } catch (error) {
         console.error("Network Error:", error);
-        alert("A network error occurred.");
+        document.getElementById('generationStatus').innerText = "A network error occurred.";
     }
 }
