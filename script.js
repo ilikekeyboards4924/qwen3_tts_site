@@ -43,12 +43,13 @@ async function generateAudio() {
             audioPlayer.src = audioSrc;
             audioPlayer.style.display = 'block';
             // audioPlayer.play();
+            document.getElementById('generationStatus').innerText = "generation successful.";
         } else {
             console.error("Error response:", result);
-            document.getElementById('generationStatus').innerText = "Generation failed. Check the console for details.";
+            document.getElementById('generationStatus').innerText = "generation failed. Check the console for details.";
         }
     } catch (error) {
         console.error("Network Error:", error);
-        document.getElementById('generationStatus').innerText = "A network error occurred.";
+        document.getElementById('generationStatus').innerText = "a network error occurred.";
     }
 }
